@@ -1,0 +1,3 @@
+# 运行时依赖（只装这两个就能跑：pystray 会带上 pywin32-ctypes、six）
+Pillow==13.0.0
+pystray==0.19.5

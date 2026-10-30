@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clipboard-manager"
+version = "1.0.0"
+description = "轻量 Windows 剪贴板管理器：文字 / 图片 / 视频文件统一记录，FTS5 模糊搜索，全局热键唤起"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "Pillow>=10.0",
+    "pystray>=0.19",
+]
+
+[project.optional-dependencies]
+dev = ["pyinstaller>=6.0"]
+
+[project.gui-scripts]
+clipboard-manager = "app.app:main"
+
+[tool.setuptools]
+packages = ["app", "app.ui"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+exclude = [".venv", "build", "dist"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.pyright]
+include = ["app", "tools"]
+pythonVersion = "3.10"
+typeCheckingMode = "basic"
+reportMissingImports = "warning"

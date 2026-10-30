@@ -1,0 +1,4 @@
+# 开发/打包依赖（在 requirements.txt 之上）
+-r requirements.txt
+
+pyinstaller==6.22.3
